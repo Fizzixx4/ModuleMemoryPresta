@@ -48,4 +48,11 @@ class MemoryGamePageMemoryGameModuleFrontController extends ModuleFrontControlle
         }
         return $code;
     }
+
+    public function getImage(){
+        $images = [];
+        $imagePath = '';
+        //getImgFolder
+        //getImgPath
+    }
 }
