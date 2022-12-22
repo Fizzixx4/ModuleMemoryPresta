@@ -10,7 +10,7 @@ class Memorygame extends Module implements WidgetInterface{
         $this->name = 'memorygame';
         $this->tab; 
         $this->version = '1.0.0';
-        $this->author = 'GK';
+        $this->author = 'Grégory Koch';
         $this->need_instance = 1;
         $this->bootstrap = true;
         parent::__construct();
@@ -41,6 +41,14 @@ class Memorygame extends Module implements WidgetInterface{
             [
                 'media' => 'all',
                 'priority' => 200
+            ]
+        );
+        $this->context->controller->registerJavascript(
+            'module-memorygame-js',
+            'modules/'.$this->name.'/views/template/assets/main.js',
+            [
+                'media' => 'all',
+                'priority' => 300
             ]
         );
     }

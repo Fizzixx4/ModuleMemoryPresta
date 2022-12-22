@@ -1,6 +1,11 @@
-/* Titres */
+/* Titre et lien*/
 .h2Memo{
     color: red;
+    text-align: center;
+}
+
+.linkMemo{
+    display: inline;
     text-align: center;
 }
 
