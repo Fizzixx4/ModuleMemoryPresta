@@ -1,0 +1,28 @@
+/* Titres */
+.h2Memo{
+    color: red;
+    text-align: center;
+}
+
+/*Délimitation de la fenêtre de jeu*/
+#windowGame{
+    border: solid 1px black;
+    height: 600px;
+}
+
+#game{
+    border: solid 1px red;
+    height: 560px;
+}
+
+/*Position des cartes*/
+.rowMemo{
+    display: flex;
+}
+
+.cardMemo{
+    border: solid 1px blueviolet;
+    height: 175px;
+    width: 175px;
+    margin: 5px 5px;
+}
