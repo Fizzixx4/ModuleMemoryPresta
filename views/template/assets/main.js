@@ -1,9 +1,9 @@
 //On déclare une variable correspondant à l'élément card
-const card = document.querySelector('.cardMemo');
+const cards = document.querySelectorAll('.cardMemo');
 
-console.log(card.className);
+console.log(cards.className);
 //On déclenche au click de l'élément la rotation
-card.addEventListener('click',(e)=>{
+cards.forEach(card => card.addEventListener('click',()=>{
     card.classList.toggle('rotated');
     console.log(card.className);
-})
+}))
