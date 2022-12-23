@@ -2,6 +2,7 @@
 .h2Memo{
     color: red;
     text-align: center;
+    margin-top: 10px;
 }
 
 .linkMemo{
@@ -9,15 +10,26 @@
     text-align: center;
 }
 
-/*Délimitation de la fenêtre de jeu*/
+.displayVictoryLoose{
+    text-align: center;
+    font-size: 3em;
+}
+
+/*Délimitation de la fenêtre de jeu et gestion des container*/
 #windowGame{
     border: solid 1px black;
     height: 650px;
 }
 
 #game{
+    display: flex;
+    align-items: center;
     border: solid 1px red;
     height: 600px;
+}
+
+.rightSection{
+    width: 100%;
 }
 
 /*Position des cartes*/
@@ -50,9 +62,11 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: url('./img/logo_small_icon_only_inverted.png');
-    background-size: cover ;
-    border: solid 1px black;
+    background-image: url('./img/logo_mail-born2climb.jpg');
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: solid 1px rgb(158, 158, 158);
     border-radius: 10%;
     backface-visibility: hidden;
 }
@@ -63,6 +77,8 @@
     height: 100%;
     width: 100%;
     backface-visibility: hidden;
+    border: solid 1px rgb(158, 158, 158);
+    border-radius: 10%;
     transform: rotateY(-180deg);
 }
 
