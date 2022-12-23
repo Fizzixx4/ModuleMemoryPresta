@@ -15,30 +15,32 @@ let pathImg2 = '';
 let flippedCard = 0;
 
 //On déclenche au click de l'élément la rotation
-cards.forEach(card => card.addEventListener('click',()=>{
-    //Si le compteur est inférieur à 2 alors on peut retourner des cartes
-    if(flippedCard < 2){
-        card.classList.add('rotated');
-        //Initialisation des cards et pathImg pour comparaison
-        if(pathImg1 === ''){
-            card1 = card;
-            pathImg1 = card.children[1].children[0].currentSrc;
-        }
-        else{
-            card2 = card;
-            pathImg2 = card.children[1].children[0].currentSrc;
-        }
-        flippedCard++;
-        //Quand deux cartes sont retournées après un délai ça les compare et les re-retourne en cas d'erreur
-        if(flippedCard === 2){
-            if(pathImg1 === pathImg2){
-                success ++;
+cards.forEach(card => card.addEventListener('click', ()=>{
+    if(!(card.classList.contains('rotated'))){
+        //Si le compteur est inférieur à 2 alors on peut retourner des cartes
+        if(flippedCard < 2){
+            card.classList.add('rotated');
+            //Initialisation des cards et pathImg pour comparaison
+            if(pathImg1 === ''){
+                card1 = card;
+                pathImg1 = card.children[1].children[0].currentSrc;
             }
             else{
-                setTimeout(twoMaxFlippedCard(card1,card2),2000);
-                error ++;
+                card2 = card;
+                pathImg2 = card.children[1].children[0].currentSrc;
             }
-            reset();
+            flippedCard++;
+            //Quand deux cartes sont retournées après un délai ça les compare et les re-retourne en cas d'erreur
+            if(flippedCard === 2){
+                if(pathImg1 === pathImg2){
+                    success ++;
+                }
+                else{
+                    setTimeout(twoMaxFlippedCard, 2000, card1, card2);
+                    error ++;
+                }
+                reset();
+            }
         }
     }
 }));
