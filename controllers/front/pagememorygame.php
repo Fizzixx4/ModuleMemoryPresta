@@ -28,8 +28,10 @@ class MemoryGamePageMemoryGameModuleFrontController extends ModuleFrontControlle
         //     $this->context->smarty->assign($tpl_vars);
         //     $this->setTemplate('module:zloterie/views/template/front/coupon.tpl');
         //}
+        $idImages = Image::getAllImages();
+        $arrayPath = MemoryGamePageMemoryGameModuleFrontController::arrayImagePath($idImages);
         $tpl_vars = [
-                    'link' => 'page normal',
+                    //'idImages' => var_dump($idImages),
                  ];
         $this->context->smarty->assign($tpl_vars);
         $this->setTemplate('module:memorygame/views/template/front/front.tpl');
@@ -40,7 +42,7 @@ class MemoryGamePageMemoryGameModuleFrontController extends ModuleFrontControlle
     }
 
     public static function codeGenerator(){
-        $string = 'AZERRTYSDPKDFBCVKLBCVWXLCMVSDFLSFSDFJSLD23146468';
+        $string = 'AZERTYUIOPQSDFGHJKLMWXCVBN1234567890';
         $code = '';
         for($i = 0; $i < 9; $i++){
             $num = rand(0,strlen($string)-1);
@@ -49,10 +51,22 @@ class MemoryGamePageMemoryGameModuleFrontController extends ModuleFrontControlle
         return $code;
     }
 
-    public static function getImg(){
-        $images = [];
-        $imagePath = '';
-        //getImgFolder
-        //getImgPath
+    //Ecriture des chemins d'images depuis un tableau possédant les id des images
+    public static function arrayImagePath($idImages){
+        //"http://localhost:8888/Prestashop/prestashop/img/p/1/0/10-home_default.jpg"
+        $arrayImagePath = [];
+        $pathPrefix = "http://localhost:8888/Prestashop/prestashop/img/p/";
+        $pathSufix = "-home_default.jpg";
+        foreach($idImages as $idImage){
+            //Pour éviter les images des produits par défaut
+            if($idImage['id_image']> 9){
+                $id = $idImage['id_image'];
+                $idPrefix = substr($id, 0, -1);
+                $idSufix = substr($id, -1);
+                $path = $pathPrefix.$idPrefix.'/'.$idSufix.'/'.$id.$pathSufix;
+                $arrayImagePath[] = $path;
+            }
+        }
+        return $arrayImagePath;
     }
 }

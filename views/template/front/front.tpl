@@ -1,6 +1,7 @@
 {extends file = 'page.tpl'}
 
 {block name = 'page_content'}
+    <h1>{$idImages}</h1>
     <section id="windowGame">
         <h2 class='h2Memo'>Memory Game</h2>
         <div id="game">
