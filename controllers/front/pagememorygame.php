@@ -45,19 +45,19 @@ class MemoryGamePageMemoryGameModuleFrontController extends ModuleFrontControlle
 
     //Alimente un tableau avec des paires de chemin d'image aléatoire, hormis la dernière
     public static function randomArrayForCards($arrayImagePath){
-        $initialArray = [];
+        $randomArray = [];
         $counter = count($arrayImagePath)-1;
         for($i=0; $i<9; $i=$i+2){
-            $randomIndex1 = rand(0,$counter);
-            while(in_array($arrayImagePath[$randomIndex1],$initialArray)) {
-                $randomIndex1 = rand(0,$counter);
+            $randomIndex = rand(0,$counter);
+            while(in_array($arrayImagePath[$randomIndex],$randomArray)) {
+                $randomIndex = rand(0,$counter);
             }
-             $initialArray[$i] = $arrayImagePath[$randomIndex1];
+             $randomArray[$i] = $arrayImagePath[$randomIndex];
              if ($i < 8) {
-                $initialArray[$i+1] = $arrayImagePath[$randomIndex1];
+                $randomArray[$i+1] = $arrayImagePath[$randomIndex];
              }
         }
-        shuffle($initialArray);
-        return $initialArray;
+        shuffle($randomArray);
+        return $randomArray;
     }
 }
