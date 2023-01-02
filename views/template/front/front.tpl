@@ -94,7 +94,13 @@
                 </div>
             </div>
             <div class="rightSection">
-                <h3 class="displayVictoryLoose"></h3>
+            {if $smarty.get.victory == 0}
+                 <div class="displayVictoryLoose">
+                </div>
+            {/if}
+            {if $smarty.get.victory == 1}
+                <h4 class='CodeMemo'>Notez ce code pour l'utiliser lors de votre prochain achat:<br><span>{$code}</span></h4>
+            {/if}
             </div>
         </div>
     </section>

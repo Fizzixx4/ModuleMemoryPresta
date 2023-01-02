@@ -4,6 +4,9 @@ const cards = document.querySelectorAll('.cardMemo');
 //On déclare une variable correspondant à la div où sera affiché si l'utilisateur a gagné ou perdu
 const displayVictoryLoose = document.querySelector('.displayVictoryLoose');
 
+//On déclare une variable correspondant aux bouton de victoire
+const submitVictory = document.querySelector(".submitVictory");
+
 //On déclare le nombre de paires trouvées et le nombre d'erreur
 let success = 0;
 let error = 0;
@@ -82,11 +85,16 @@ function resetValues(){
  */
 function finsihGame(){
     if(error === 4){
-        displayVictoryLoose.textContent = 'Perdu';
+        displayVictoryLoose.innerHTML = `<h3>Perdu !</h3>`;
         isFinished = true;
     }
     if(success === 4){
-        displayVictoryLoose.textContent = 'Gagné';
+        displayVictoryLoose.innerHTML += `<h3>Gagné !</h3><form method='POST' action='index.php?victory=1&fc=module&module=memorygame&controller=pagememorygame'><input class='submitVictory btn btn-primary' type='submit' value="J'affiche mon code"></form>`;
         isFinished = true;
     }
 }
+
+//On déclenche un élément au click
+submitVictory.addEventListener('click', (event) =>{
+    //event.preventDefault();
+})

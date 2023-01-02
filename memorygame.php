@@ -56,7 +56,7 @@ class Memorygame extends Module implements WidgetInterface{
     public function getWidgetVariables($hookName, array $configuration){
         return [
             'number' => Configuration::get('MEMORY_PROMOTION'),
-            'link' => Context::getContext()->link->getModuleLink('memorygame','pagememorygame',['generate'=>0])
+            'link' => Context::getContext()->link->getModuleLink('memorygame','pagememorygame',['victory'=>0])
         ];
     }
 

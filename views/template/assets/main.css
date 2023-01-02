@@ -1,18 +1,28 @@
-/* Titre et lien*/
+/* Titres*/
 .h2Memo{
     color: rgb(14, 14, 137);
+    font-size: 2em;;
     text-align: center;
     margin-top: 10px;
 }
 
-.linkMemo{
-    display: inline;
+/*Container Page d'accueil*/
+.ctaMemo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     text-align: center;
+    height: 130px;
+    margin-bottom: 20px;
+    background-color: white;
+    background-size: 210px;
+    align-items: center;
 }
 
-.displayVictoryLoose{
-    text-align: center;
-    font-size: 3em;
+.linkMemo{
+    width: fit-content;
+    font-weight: bold;
+    border-radius: 10px;
 }
 
 /*Délimitation de la fenêtre de jeu et gestion des container*/
@@ -84,4 +94,30 @@
     max-width: 100%;
     max-height: 100%;
     border-radius: 10%;
+}
+
+/*Affichage Victoire ou Défaite*/
+.displayVictoryLoose{
+    text-align: center;
+}
+
+.displayVictoryLoose h3{
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.submitVictory{
+    border-radius: 10px;
+}
+
+/*Code de Victoire*/
+.CodeMemo{
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 40px;
+}
+
+.CodeMemo span{
+    color: brown;
 }
