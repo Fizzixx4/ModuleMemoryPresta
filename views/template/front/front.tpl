@@ -2,7 +2,6 @@
 
 {block name = 'page_content'}
     <section id="windowGame">
-        <h1></h1>
         <h2 class='h2Memo'>Memory Game</h2>
         <div id="game">
             <div class="leftSection">
@@ -12,7 +11,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src={$arrayPath[0]}>
+                                <img class="imgMemo" src={$randomArray[0]}>
                             </div>
                         </div>
                     </div>
@@ -21,7 +20,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src={$arrayPath[0]}>
+                                <img class="imgMemo" src={$randomArray[1]}>
                             </div>
                         </div>
                     </div>
@@ -30,7 +29,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src={$arrayPath[4]}>
+                                <img class="imgMemo" src={$randomArray[2]}>
                             </div>
                         </div>
                     </div>
@@ -41,7 +40,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src={$arrayPath[4]}>
+                                <img class="imgMemo" src={$randomArray[3]}>
                             </div>
                         </div>
                     </div>
@@ -50,7 +49,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src={$arrayPath[3]}>
+                                <img class="imgMemo" src={$randomArray[4]}>
                             </div>
                         </div>
                     </div>
@@ -59,7 +58,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src={$arrayPath[3]}>
+                                <img class="imgMemo" src={$randomArray[5]}>
                             </div>
                         </div>
                     </div>
@@ -70,7 +69,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src={$arrayPath[1]}>
+                                <img class="imgMemo" src={$randomArray[6]}>
                             </div>
                         </div>
                     </div>
@@ -79,7 +78,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src={$arrayPath[1]}>
+                                <img class="imgMemo" src={$randomArray[7]}>
                             </div>
                         </div>
                     </div>
@@ -88,7 +87,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src={$arrayPath[2]}>
+                                <img class="imgMemo" src={$randomArray[8]}>
                             </div>
                         </div>
                     </div>
