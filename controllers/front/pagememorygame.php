@@ -2,8 +2,8 @@
 
 class MemoryGamePageMemoryGameModuleFrontController extends ModuleFrontController{
 
-    // public $auth = true;
-    // public $guestAllowed = false;
+    public $auth = true;
+    public $guestAllowed = false;
 
     public function __construct(){
         parent::__construct();
@@ -24,14 +24,22 @@ class MemoryGamePageMemoryGameModuleFrontController extends ModuleFrontControlle
             ];
         //Si il y a la condition de victoire dans la query string on crée un objet CartRule que l'on sauvegarde en BDD
         if(isset($_GET['victory']) && $_GET['victory'] == 1){
-            $cartRule = new CartRule();
-            $cartRule->name[1] = 'Réduction Memory Game';
-            $cartRule->code = $this->codeGenerator();
-            $cartRule->date_from = '2023-01-01 00:00:00';
-            $cartRule->date_to = '2023-12-31 00:00:00';
-            $cartRule->reduction_percent = Configuration::get('MEMORY_PROMOTION');
-            $cartRule->save();
-            $tpl_vars['code'] = $cartRule->code;
+            //Check si l'utilisateur a déjà gagné un coupon de réduction sur ce jeu
+            if(count(MemoryGamePageMemoryGameModuleFrontController::getCartRulesMemoryGameByCustomer((int)$this->context->cookie->id_customer)) == 0){
+                $cartRule = new CartRule();
+                $cartRule->name[1] = 'Réduction Memory Game';
+                $cartRule->description = 'memorygame';
+                $cartRule->code = $this->codeGenerator();
+                $cartRule->id_customer = (int)$this->context->cookie->id_customer;
+                $cartRule->date_from = '2023-01-01 00:00:00';
+                $cartRule->date_to = '2023-12-31 00:00:00';
+                $cartRule->reduction_percent = Configuration::get('MEMORY_PROMOTION');
+                $cartRule->save();
+                $tpl_vars['code'] = $cartRule->code;
+            }
+            else{
+                $tpl_vars['code'] = "Vous avez déjà reçu un coupon pour ce jeu";
+            }
         }
         //On fait le lien avec la variable tpl_vars et la page tpl
         $this->context->smarty->assign($tpl_vars);
@@ -77,5 +85,10 @@ class MemoryGamePageMemoryGameModuleFrontController extends ModuleFrontControlle
             $code.=$string[$num];
         }
         return $code;
+    }
+
+    public static function getCartRulesMemoryGameByCustomer($idCustomer){
+        $sql = "SELECT * FROM ". _DB_PREFIX_ . "cart_rule WHERE id_customer = ".$idCustomer." AND description = 'memorygame';";
+        return Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
     }
 }
