@@ -1,8 +1,8 @@
 {extends file = 'page.tpl'}
 
 {block name = 'page_content'}
-    <h1>{$idImages}</h1>
     <section id="windowGame">
+        <h1></h1>
         <h2 class='h2Memo'>Memory Game</h2>
         <div id="game">
             <div class="leftSection">
@@ -12,7 +12,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src="http://localhost:8888/Prestashop/prestashop/img/p/1/0/10-home_default.jpg">
+                                <img class="imgMemo" src={$arrayPath[0]}>
                             </div>
                         </div>
                     </div>
@@ -21,7 +21,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src="http://localhost:8888/Prestashop/prestashop/img/p/1/0/10-home_default.jpg">
+                                <img class="imgMemo" src={$arrayPath[0]}>
                             </div>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src="http://localhost:8888/Prestashop/prestashop/img/p/1/1/11-home_default.jpg">
+                                <img class="imgMemo" src={$arrayPath[4]}>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src="http://localhost:8888/Prestashop/prestashop/img/p/1/1/11-home_default.jpg">
+                                <img class="imgMemo" src={$arrayPath[4]}>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src="http://localhost:8888/Prestashop/prestashop/img/p/1/2/12-home_default.jpg">
+                                <img class="imgMemo" src={$arrayPath[3]}>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src="http://localhost:8888/Prestashop/prestashop/img/p/1/2/12-home_default.jpg">
+                                <img class="imgMemo" src={$arrayPath[3]}>
                             </div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src="http://localhost:8888/Prestashop/prestashop/img/p/1/3/13-home_default.jpg">
+                                <img class="imgMemo" src={$arrayPath[1]}>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src="http://localhost:8888/Prestashop/prestashop/img/p/1/3/13-home_default.jpg">
+                                <img class="imgMemo" src={$arrayPath[1]}>
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                             <div class="cardMemoFront">
                             </div>
                             <div class="cardMemoBack">
-                                <img class="imgMemo" src="http://localhost:8888/Prestashop/prestashop/img/p/1/4/14-home_default.jpg">
+                                <img class="imgMemo" src={$arrayPath[2]}>
                             </div>
                         </div>
                     </div>

@@ -81,7 +81,7 @@ function resetValues(){
  * Si le nombre d'erreur ou de paire atteint le nombre return vrai pour indiquer que la partie est finie
  */
 function finsihGame(){
-    if(error === 3){
+    if(error === 4){
         displayVictoryLoose.textContent = 'Perdu';
         isFinished = true;
     }
